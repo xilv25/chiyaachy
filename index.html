@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Mila - Selamat Tahun Baru dari Rik</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ff7eb3;
+            --secondary: #7afcff;
+            --accent: #ff65a3;
+            --light: #fff9fb;
+            --dark: #2d3047;
+            --pastel-blue: #c7f5ff;
+            --pastel-pink: #ffd6e7;
+            --pastel-yellow: #fffac4;
+            --purple: #b388ff;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: radial-gradient(var(--pastel-pink) 2px, transparent 2px);
+            background-size: 30px 30px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 40px 0 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo span {
+            color: var(--purple);
+        }
+
+        .header-subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 30px;
+        }
+
+        .hearts {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: var(--primary);
+            animation: float 3s infinite ease-in-out;
+        }
+
+        .names {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--purple);
+            margin-top: 10px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 0 60px;
+            position: relative;
+        }
+
+        .hero-image {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--pastel-pink), var(--pastel-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+            position: relative;
+            overflow: hidden;
+            border: 8px solid white;
+        }
+
+        .hero-image:before {
+            content: "M";
+            font-family: 'Dancing Script', cursive;
+            font-size: 8rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-text {
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .hero-text h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--dark);
+            padding: 0 20px;
+        }
+
+        /* Messages Section */
+        .messages {
+            padding: 60px 0;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 30px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .messages:before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background-color: var(--pastel-yellow);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .messages:after {
+            content: "";
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 300px;
+            height: 300px;
+            background-color: var(--pastel-blue);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            text-align: center;
+            color: var(--purple);
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .message-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .message-box {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 8px solid var(--primary);
+        }
+
+        .message-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .message-box.english {
+            border-top-color: var(--secondary);
+        }
+
+        .message-box.indonesian {
+            border-top-color: var(--accent);
+        }
+
+        .message-box-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .message-box-title i {
+            color: var(--primary);
+        }
+
+        .message-box p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Communication Section */
+        .communication {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .communication h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            color: var(--accent);
+            margin-bottom: 30px;
+        }
+
+        .communication p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .heart-beat {
+            font-size: 3rem;
+            color: var(--accent);
+            animation: heartbeat 1.5s infinite;
+            margin-bottom: 30px;
+        }
+
+        /* New Year Wishes */
+        .new-year-wishes {
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--pastel-pink), var(--pastel-blue));
+            border-radius: 30px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .new-year-wishes:before {
+            content: "2024";
+            position: absolute;
+            font-family: 'Dancing Script', cursive;
+            font-size: 15rem;
+            color: rgba(255, 255, 255, 0.3);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        .new-year-wishes h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--dark);
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .wishes-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .wish {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .wish:hover {
+            transform: scale(1.05);
+        }
+
+        .wish i {
+            font-size: 2.5rem;
+            color: var(--purple);
+            margin-bottom: 15px;
+        }
+
+        .wish p {
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            background-color: var(--dark);
+            color: white;
+            border-radius: 30px 30px 0 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-names {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .footer-message {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            color: var(--pastel-pink);
+            margin-top: 20px;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            5% { transform: scale(1.1); }
+            10% { transform: scale(1); }
+            15% { transform: scale(1.1); }
+            20% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .names {
+                font-size: 2rem;
+            }
+            
+            .hero-text h2 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2.3rem;
+            }
+            
+            .message-box {
+                min-width: 100%;
+            }
+            
+            .new-year-wishes:before {
+                font-size: 10rem;
+            }
+        }
+
+        /* Decorative Elements */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 1.5rem;
+            color: var(--primary);
+            opacity: 0.5;
+            animation: float-heart 10s infinite linear;
+        }
+
+        @keyframes float-heart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Button */
+        .music-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .music-toggle:hover {
+            transform: scale(1.1);
+            background-color: var(--purple);
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <!-- Music Toggle -->
+    <div class="music-toggle" id="musicToggle">
+        <i class="fas fa-music"></i>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="hearts">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+            </div>
+            <h1 class="logo">Untuk <span>Mila</span></h1>
+            <p class="header-subtitle">Selamat Tahun Baru 2024</p>
+            <div class="names">Dari Rik dengan Cinta</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-image"></div>
+            <div class="hero-text">
+                <h2>Untuk Mila yang Teristimewa,</h2>
+                <p>Tahun baru adalah waktu yang tepat untuk merefleksikan masa lalu dan merencanakan masa depan. Tapi yang paling penting, ini adalah waktu untuk mengungkapkan perasaan yang mungkin selama ini tersimpan.</p>
+                <p>Aku menulis ini dengan harapan bahwa kata-kata ini bisa menjadi jembatan di antara kita, seperti yang seharusnya komunikasi lakukan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Messages Section -->
+    <section class="messages">
+        <div class="container">
+            <h2 class="section-title">Pesan Untukmu</h2>
+            <div class="message-container">
+                <!-- English Messages -->
+                <div class="message-box english">
+                    <h3 class="message-box-title"><i class="fas fa-language"></i> In English</h3>
+                    <p>My dearest Mila, as the new year approaches, I find myself thinking of you more than ever. This year has taught us many lessons, especially about the importance of communication.</p>
+                    <p>I want you to know that I deeply regret every moment we failed to understand each other. You mean the world to me, and the distance between us feels like an ocean I desperately want to cross.</p>
+                    <p>In this new year, I promise to be better at expressing myself, to listen more carefully, and to bridge the gaps that words sometimes create. You are worth every effort.</p>
+                    <p>May this new year bring you endless joy, success in all your endeavors, and maybe... just maybe, a second chance for us to get things right.</p>
+                </div>
+                
+                <!-- Indonesian Messages -->
+                <div class="message-box indonesian">
+                    <h3 class="message-box-title"><i class="fas fa-language"></i> Dalam Bahasa Indonesia</h3>
+                    <p>Mila tersayang, di penghujung tahun ini, aku terus memikirkanmu. Tahun ini mengajarkan kita banyak hal, terutama tentang betapa pentingnya komunikasi.</p>
+                    <p>Aku ingin kamu tahu bahwa aku sangat menyesali setiap momen ketika kita gagal memahami satu sama lain. Kamu sangat berarti bagiku, dan jarak antara kita terasa seperti lautan yang sangat ingin kuseberangi.</p>
+                    <p>Di tahun baru ini, aku berjanji akan menjadi lebih baik dalam mengekspresikan perasaanku, akan lebih mendengarkan, dan menjembatani kesenjangan yang kadang diciptakan oleh kata-kata.</p>
+                    <p>Semoga tahun baru ini membawakanmu kebahagiaan tanpa akhir, kesuksesan dalam semua usahamu, dan mungkin... hanya mungkin, kesempatan kedua bagi kita untuk memperbaiki segalanya.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Communication Section -->
+    <section class="communication">
+        <div class="container">
+            <div class="heart-beat">
+                <i class="fas fa-heartbeat"></i>
+            </div>
+            <h3>Tentang Komunikasi Kita</h3>
+            <p>Komunikasi bukan hanya tentang berbicara dan mendengarkan, tapi tentang memahami dan merasakan. Aku sadar bahwa selama ini aku mungkin lebih banyak berbicara daripada mendengarkan, lebih banyak mengungkapkan daripada memahami.</p>
+            <p>Di tahun baru ini, aku bertekad untuk belajar bahasa hatimu dengan lebih baik, untuk membaca yang tak terucap, dan mendengarkan keheninganmu yang paling dalam.</p>
+            <p>Karena cinta yang sejati tidak hanya berbicara melalui kata-kata, tapi melalui perhatian, kesabaran, dan upaya untuk benar-benar mengerti satu sama lain.</p>
+        </div>
+    </section>
+
+    <!-- New Year Wishes -->
+    <section class="new-year-wishes">
+        <div class="container">
+            <h3>Harapan Untuk Tahun Baru</h3>
+            <div class="wishes-container">
+                <div class="wish">
+                    <i class="fas fa-star"></i>
+                    <p>Semoga setiap hari membawa senyuman untuk wajahmu dan kehangatan untuk hatimu.</p>
+                </div>
+                <div class="wish">
+                    <i class="fas fa-heart"></i>
+                    <p>Semoga kamu menemukan kedamaian dalam setiap keputusan dan kebahagiaan dalam setiap momen.</p>
+                </div>
+                <div class="wish">
+                    <i class="fas fa-compass"></i>
+                    <p>Semoga jalan hidupmu dipenuhi dengan petualangan indah dan pencapaian yang membanggakan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-names">Rik & Mila</div>
+                <p class="footer-message">Tahun baru adalah awal baru. Awal yang penuh harapan, pengampunan, dan kemungkinan. Aku berharap kita bisa menulis bab baru bersama, dengan lebih banyak pengertian dan komunikasi yang lebih baik.</p>
+                <p class="footer-message">Apapun yang terjadi, kamu akan selalu memiliki tempat khusus di hatiku.</p>
+                <div class="signature">Selamat Tahun Baru, Mila</div>
+                <div class="signature">Dengan cinta, Rik</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Audio for Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-loving-you-117.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Create floating hearts
+        const floatingHeartsContainer = document.getElementById('floatingHearts');
+        for (let i = 0; i < 15; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '<i class="fas fa-heart"></i>';
+            heart.style.left = `${Math.random() * 100}%`;
+            heart.style.animationDelay = `${Math.random() * 10}s`;
+            heart.style.fontSize = `${Math.random() * 20 + 10}px`;
+            heart.style.color = i % 3 === 0 ? '#ff7eb3' : i % 3 === 1 ? '#7afcff' : '#b388ff';
+            floatingHeartsContainer.appendChild(heart);
+        }
+
+        // Music toggle functionality
+        const musicToggle = document.getElementById('musicToggle');
+        const bgMusic = document.getElementById('bgMusic');
+        let isPlaying = false;
+
+        musicToggle.addEventListener('click', function() {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicToggle.innerHTML = '<i class="fas fa-music"></i>';
+                musicToggle.style.backgroundColor = '#ff65a3';
+            } else {
+                bgMusic.play().catch(e => {
+                    // If autoplay is blocked, show a message
+                    alert("Silakan klik lagi untuk memutar musik. Browser membutuhkan interaksi pengguna terlebih dahulu.");
+                });
+                musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+                musicToggle.style.backgroundColor = '#b388ff';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Typewriter effect for hero text
+        const heroText = document.querySelector('.hero-text p');
+        const originalText = heroText.textContent;
+        heroText.textContent = '';
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < originalText.length) {
+                heroText.textContent += originalText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 30);
+            }
+        }
+        
+        // Start typewriter effect after page loads
+        window.addEventListener('load', function() {
+            setTimeout(typeWriter, 1000);
+        });
+
+        // Add click effect to hearts
+        document.querySelectorAll('.fa-heart').forEach(heart => {
+            heart.addEventListener('click', function() {
+                this.style.transform = 'scale(1.5)';
+                this.style.color = '#ff65a3';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
